@@ -27,22 +27,23 @@ function App() {
 
   return (
     <div className="App">
+      <div className="ChoiceContainer">
+        {/* Language selection dropdown */}
+        <select
+          className="ChoiceSelect"
+          onChange={(e) => setLanguage(e.target.value)}
+          value={language}
+        >
+          <option value="cpp">C++</option>
+          <option value="py">Python</option>
+          <option value="java">Java</option>
+        </select>
+      </div>
+
       <h1>ONLINE CODE COMPILER</h1>
       <div className="InputOutputContainer">
         {/* Left side - Input section */}
         <div className="InputSection">
-          {/* Language selection dropdown */}
-          <label htmlFor="languageSelect" className="Label">Language:</label>
-          <select
-            className="LanguageSelect"
-            onChange={(e) => setLanguage(e.target.value)}
-            value={language}
-          >
-            <option value="cpp">C++</option>
-            <option value="py">Python</option>
-            <option value="java">Java</option>
-          </select>
-
           {/* Code input textarea */}
           <textarea
             rows="25"
@@ -50,7 +51,7 @@ function App() {
             className="CodeInput"
             value={code}
             onChange={(e) => setCode(e.target.value)}
-            placeholder="Enter your code here..."
+            placeholder="Your coding starts here"
           ></textarea>
           
           {/* Submit button */}
